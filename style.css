@@ -16,7 +16,7 @@
   --font-size-s: 0.85rem;
   --font-size-m: 1rem;
   --font-size-l: 1.8rem;
-  --font-size-xl: 2.8rem;
+  --font-size-xl: 4rem;
 
   --site-max-width: 1400px;
 }
@@ -28,6 +28,7 @@ header {
   left: 0;
   align-items: center;
   width: 100%;
+  z-index: 50;
 }
 
 header .navbar {
@@ -46,6 +47,7 @@ header .navbar .navbar-list {
   background: var(--secondary-color);
   padding: 3px;
   border-radius: 100px;
+  backdrop-filter: blur(5px);
 }
 
 .navbar .navbar-list li {
@@ -75,18 +77,18 @@ header .navbar .navbar-list {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 100px 0;
+  padding: 150px 0;
   text-align: center;
-  gap: 40px;
+  gap: 50px;
   font-size: var(--font-size-s);
   font-weight: 300;
 }
 
 .title-section h1 {
   font-size: var(--font-size-xl);
-  font-weight: 400;
-  max-width: 600px;
-  line-height: 60px;
+  font-weight: 500;
+  max-width: 750px;
+  line-height: 80px;
 }
 
 .title-section .title-wrapper {
@@ -117,14 +119,13 @@ header .navbar .navbar-list {
 }
 
 .thumbnail-grid .grid-item-container {
-  z-index: 100;
-  background: var(--primary-color);
-  backdrop-filter: blur(300px);
-  transition: 0.5s ease;
+  display: flex;
+  align-items: top;
+  text-decoration: none;
+  color: inherit;
 }
 
-.thumbnail-grid .grid-thumbnail,
-.thumbnail-grid .grid-video {
+.thumbnail-grid .grid-item-container .grid-item {
   z-index: 1;
   width: 100%;
   height: 100%;
@@ -132,10 +133,33 @@ header .navbar .navbar-list {
   object-fit: cover;
   object-position: 50% 50%;
   cursor: pointer;
-  transition: 0.5s ease;
+  transition: 0.4s ease;
   background: var(--primary-color);
 }
 
-.thumbnail-grid .grid-item:hover::before {
-  backdrop-filter: blur(5px);
+.thumbnail-grid .grid-item-container p {
+  float: left;
+  position: relative;
+  top: 30px;
+  left: 25px;
+  z-index: 5;
+  margin-bottom: -20px;
+  color: var(--primary-color);
+  font-weight: 300;
+  width: 0;
+  height: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.4s ease;
+  display: block;
+}
+
+.thumbnail-grid .grid-item-container:hover p {
+  visibility: visible;
+  opacity: 1;
+}
+
+.thumbnail-grid .grid-item-container .grid-item:hover {
+  filter: blur(5px) brightness(75%);
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.59);
 }
