@@ -17,6 +17,7 @@
   --font-size-m: 1.3rem;
   --font-size-l: 2.1rem;
   --font-size-xl: 4rem;
+  --font-size-xxl: 4.5rem;
 
   --site-max-width: 1400px;
 
@@ -375,6 +376,32 @@ footer .footer-right .footer-list {
   padding: 200px 0;
 }
 
+.contact-page-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 87vh;
+}
+
+.content-title {
+  text-align: center;
+  padding-top: 50px;
+}
+
+.content-title h2 {
+  font-size: var(--font-size-xxl);
+  font-weight: 500;
+  line-height: 80px;
+}
+
+.content-title a {
+  text-decoration: none;
+  color: var(--grey-color);
+}
+
+.content-title a:hover {
+  color: rgba(128, 128, 128, 0.598);
+}
 
 
 /* Media Queries for responsiveness */
@@ -384,6 +411,7 @@ footer .footer-right .footer-list {
     --font-size-m: 1.1rem;
     --font-size-l: 2.1rem;
     --font-size-xl: 2.7rem;
+    --font-size-xxl: 3rem;
   }
 
   .title-section {
@@ -442,6 +470,10 @@ footer .footer-right .footer-list {
   .client-grid .client-cell {
     padding: 20px;
   }
+
+  .content-title h2 {
+    line-height: 60px;
+  }
 }
 
 @media screen and (width <= 800px) {
@@ -450,6 +482,7 @@ footer .footer-right .footer-list {
     --font-size-m: 1rem;
     --font-size-l: 1.4rem;
     --font-size-xl: 1.8rem;
+    --font-size-xxl: 2.2rem;
   }
 
   header .navbar {
@@ -596,5 +629,17 @@ footer .footer-right .footer-list {
   
   .client-grid .client-cell {
     padding: 0 60px;
+  }
+
+  .contact-page-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+  }
+
+  .content-title h2 {
+    line-height: 45px;
+    font-weight: 400;
   }
 }

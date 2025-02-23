@@ -172,7 +172,26 @@ const HTML = {
   `,
   contactHTML: 
   `
-  
+    <section class="contact-page-section">
+      <div class="content-title">
+        <h2>Let's work together.</h2>
+        <h2><a href="#">Get in touch.</a></h2>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-left">
+        <img src="assets/copyright.png" alt="Copyright">
+        <p>&copy; Oil Harris 2023</p>
+      </div>
+      <nav class="footer-right">
+        <ul class="footer-list">
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">Mail</a></li>
+        </ul>
+      </nav>
+    </footer>
   `
 };
 
