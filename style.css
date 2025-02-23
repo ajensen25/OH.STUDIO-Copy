@@ -14,9 +14,10 @@
   --grey-color: rgb(128, 128, 128);
 
   --font-size-s: 0.85rem;
-  --font-size-m: 1rem;
+  --font-size-m: 1.3rem;
   --font-size-l: 2.1rem;
   --font-size-xl: 4rem;
+  --font-size-xxl: 4.5rem;
 
   --site-max-width: 1400px;
 
@@ -24,7 +25,7 @@
   --breakpoint-2: 800px;
 }
 
-/* Header / Navbar Styling */
+/* Header / Navbar Styling along with styling for Home */
 header {
   position: fixed;
   top: 0;
@@ -87,6 +88,10 @@ header .navbar .navbar-list {
   font-weight: 300;
 }
 
+.content-title-section {
+  padding: 250px 20px;
+}
+
 .title-section h1 {
   font-size: var(--font-size-xl);
   font-weight: 500;
@@ -100,7 +105,7 @@ header .navbar .navbar-list {
   gap: 10px;
 }
 
-.title-section .title-wrapper .wrapper-highlight {
+.wrapper-highlight {
   padding: 5px 10px;
   background: var(--secondary-color);
   border-radius: 100px;
@@ -136,6 +141,18 @@ header .navbar .navbar-list {
   object-fit: cover;
   object-position: 50% 50%;
   cursor: pointer;
+  transition: 0.4s ease;
+  background: var(--primary-color);
+}
+
+.thumbnail-grid .grid-item-container .profile-grid-item {
+  z-index: 1;
+  width: 100%;
+  height: 75%;
+  border-radius: 12px;
+  object-fit: cover;
+  object-position: 50% 50%;
+  cursor: default;
   transition: 0.4s ease;
   background: var(--primary-color);
 }
@@ -230,13 +247,171 @@ footer .footer-right .footer-list {
   color: #00000079;
 }
 
+
+/* About Page Styling */
+.about-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+.about-title {
+  text-align: center;
+  font-size: var(--font-size-s);
+  font-weight: 300;
+}
+
+.about-description {
+  font-size: var(--font-size-l);
+  max-width: 700px;
+  text-align: center;
+  line-height: 45px;
+}
+
+
+/* Experience Section Styling */
+.experience-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding-top: 150px;
+  padding-bottom: 50px;
+}
+
+.experience-title {
+  text-align: center;
+  font-size: var(--font-size-s);
+  font-weight: 300;
+}
+
+.experience-description {
+  font-size: var(--font-size-l);
+}
+
+/* Experience Grid Section Styling */
+.experience-grid-section {
+  max-width: var(--site-max-width);
+  margin: 0 auto;
+}
+
+.experience-grid-section .experience-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 50px;
+}
+
+.experience-grid .experience-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  font-size: var(--font-size-s);
+  color: var(--grey-color);
+}
+
+.experience-grid .experience-cell p {
+  font-weight: 300;
+}
+
+.experience-grid .experience-cell h2 {
+  font-size: var(--font-size-m);
+  font-weight: 400;
+  color: var(--black-color);
+}
+
+.experience-cell .wrapper-highlight {
+  color: var(--black-color);
+  margin: 10px 0;
+}
+
+/* Client Section Styling */
+.client-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding-top: 150px;
+  padding-bottom: 50px;
+}
+
+.client-title {
+  text-align: center;
+  font-size: var(--font-size-s);
+  font-weight: 300;
+}
+
+.client-description {
+  font-size: var(--font-size-l);
+}
+
+/* Client Grid Section Styling */
+.client-grid-section {
+  max-width: var(--site-max-width);
+  margin: 0 auto;
+  padding: 0 5px;
+}
+
+.client-grid-section .client-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  row-gap: 50px;
+  background-color: var(--black-color);
+  border-radius: 20px;
+}
+
+.client-grid .client-cell {
+  padding: 40px;
+}
+
+.client-grid .client-cell img {
+  width: 100%;
+}
+
+/* Profile Contact Section Styling */
+.profile-contact-section {
+  display: flex;
+  justify-content: center;
+  padding: 200px 0;
+}
+
+.contact-page-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 87vh;
+}
+
+.content-title {
+  text-align: center;
+  padding-top: 50px;
+}
+
+.content-title h2 {
+  font-size: var(--font-size-xxl);
+  font-weight: 500;
+  line-height: 80px;
+}
+
+.content-title a {
+  text-decoration: none;
+  color: var(--grey-color);
+}
+
+.content-title a:hover {
+  color: rgba(128, 128, 128, 0.598);
+}
+
+
 /* Media Queries for responsiveness */
 @media screen and (width <= 1200px) {
   :root {
     --font-size-s: 0.85rem;
-    --font-size-m: 1rem;
+    --font-size-m: 1.1rem;
     --font-size-l: 2.1rem;
     --font-size-xl: 2.7rem;
+    --font-size-xxl: 3rem;
   }
 
   .title-section {
@@ -252,14 +427,62 @@ footer .footer-right .footer-list {
   .contact-section {
     padding: 100px 0;
   }
+
+  .about-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    padding: 50px 0;
+  }
+
+  .about-title {
+    text-align: center;
+    font-size: var(--font-size-s);
+    font-weight: 300;
+  }
+  
+  .about-description {
+    font-size: var(--font-size-l);
+    max-width: 600px;
+    font-weight: 500;
+    text-align: center;
+    line-height: 45px;
+  }
+
+  .experience-section {
+    padding-bottom: 100px;
+  }
+  
+  .experience-description {
+    font-size: var(--font-size-l);
+    font-weight: 500;
+  }
+
+  .client-section {
+    padding-bottom: 100px;
+  }
+
+  .client-description {
+    font-weight: 500;
+  }
+
+  .client-grid .client-cell {
+    padding: 20px;
+  }
+
+  .content-title h2 {
+    line-height: 60px;
+  }
 }
 
 @media screen and (width <= 800px) {
   :root {
     --font-size-s: 0.85rem;
     --font-size-m: 1rem;
-    --font-size-l: 1.5rem;
+    --font-size-l: 1.4rem;
     --font-size-xl: 1.8rem;
+    --font-size-xxl: 2.2rem;
   }
 
   header .navbar {
@@ -338,5 +561,85 @@ footer .footer-right .footer-list {
   footer .footer-left {
     flex-direction: column;
     gap: 10px;
+  }
+
+  .grid-mobile-height {
+    height: 45vw;
+  }
+
+  .thumbnail-grid .item-mobile-none {
+    display: none;
+  }
+
+  .thumbnail-grid .item-mobile-shorten {
+    height: 55%;
+  }
+
+  .about-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 0;
+    padding-top: 50px;
+  }
+
+  .about-title {
+    text-align: center;
+    font-size: var(--font-size-s);
+    font-weight: 300;
+  }
+  
+  .about-description {
+    font-size: var(--font-size-l);
+    max-width: 90%;
+    font-weight: 400;
+    text-align: center;
+    line-height: 30px;
+  }
+  
+  .experience-description {
+    font-size: var(--font-size-xl);
+    font-weight: 500;
+  }
+
+  .experience-grid-section .experience-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 50px;
+  }
+
+  .client-section {
+    gap: 5px;
+  }
+
+  .client-description {
+    font-size: var(--font-size-xl);
+    font-weight: 500;
+  }
+
+  .client-grid-section .client-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 50px;
+    background-color: var(--black-color);
+    border-radius: 20px;
+    padding: 20px 0;
+  }
+  
+  .client-grid .client-cell {
+    padding: 0 60px;
+  }
+
+  .contact-page-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+  }
+
+  .content-title h2 {
+    line-height: 45px;
+    font-weight: 400;
   }
 }
