@@ -88,42 +88,155 @@ const HTML = {
   `,
   profileHTML:
   `
-    
+    <section class="title-section content-title-section">
+      <h1>Hey 👋🏼 I'm Oli</h1>
+    </section>
+
+    <section class="thumbnail-section">
+      <div class="thumbnail-grid">
+        <a class="grid-item-container">
+          <img src="assets/profile1.avif" alt="Oli" class="profile-grid-item">
+        </a>
+        <a class="grid-item-container">
+          <img src="assets/profile2.webp" alt="Oli" class="profile-grid-item">
+        </a>
+      </div>
+    </section>
+
+    <section class="about-section">
+      <div class="about-title">
+        <p class="wrapper-highlight">About</p>
+      </div>
+      <div class="about-description">
+        <p>A freelance designer based in the UK. I combine my experience in product and brand to solve problems, tell stories, and create compelling experiences.</p>
+      </div>
+    </section>
+
+    <section class="experience-section">
+      <div class="experience-title">
+        <p class="wrapper-highlight">Experience</p>
+      </div>
+      <div class="experience-description">
+        <p>Where I've worked</p>
+      </div>
+    </section>
+
+    <section class="experience-grid-section">
+      <div class="experience-grid js-experience-grid">
+        <div class="experience-cell">
+          <p>2023 - Present</p>
+          <h2>NativeState</h2>
+          <p>Design Director</p>
+          <p class="wrapper-highlight">Co-Founder</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="client-section">
+      <div class="client-title">
+        <p class="wrapper-highlight">Clients</p>
+      </div>
+      <div class="client-description">
+        <p>Who I've worked with</p>
+      </div>
+    </section>
+
+    <section class="client-grid-section">
+      <div class="client-grid js-client-grid">
+        <div class="client-cell">
+          <img src="assets/clients/eurosport.webp" alt="Eurosport">
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section">
+      <div class="contact-title">
+        <h2>Let's work together.</h2>
+        <h2><a href="#">Get in touch.</a></h2>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-left">
+        <img src="assets/copyright.png" alt="Copyright">
+        <p>&copy; Oil Harris 2023</p>
+      </div>
+      <nav class="footer-right">
+        <ul class="footer-list">
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">Mail</a></li>
+        </ul>
+      </nav>
+    </footer>
+  `,
+  contactHTML: 
+  `
+  
   `
 };
 
-const experienceGrid = document.querySelector('.js-experience-grid');
+const content = document.querySelector('.js-content');
 
-let experienceGridHTML = '';
+document.querySelectorAll('.js-navbar-button').forEach((button) => {
+  button.addEventListener('click', () => {
+    removeSelectedList();
+    button.classList.add('selected-list');
 
-experience.forEach((job) => {
-  experienceGridHTML += `
-      <div class="experience-cell">
-        <p>${job.duration}</p>
-        <h2>${job.name}</h2>
-        <p>${job.position}</p>
-        <p class="wrapper-highlight">${job.type}</p>
-      </div>
-    `;
+    if (button.classList.contains('home')) {
+      content.innerHTML = HTML.homeHTML;
+    }
+    else if (button.classList.contains('profile')) {
+      content.innerHTML = HTML.profileHTML;
+      generateProfileHTML();
+    }
+    else {
+      content.innerHTML = HTML.contactHTML;
+    }
+  });
 });
 
-experienceGrid.innerHTML = experienceGridHTML;
+function removeSelectedList() {
+  document.querySelectorAll('.js-navbar-button').forEach((button) => {
+    button.classList.remove('selected-list');
+  });
+};
+
+function generateProfileHTML() {
+  const experienceGrid = document.querySelector('.js-experience-grid');
+  console.log(experienceGrid);
+
+  let experienceGridHTML = '';
+  
+  experience.forEach((job) => {
+    experienceGridHTML += `
+        <div class="experience-cell">
+          <p>${job.duration}</p>
+          <h2>${job.name}</h2>
+          <p>${job.position}</p>
+          <p class="wrapper-highlight">${job.type}</p>
+        </div>
+      `;
+  });
+  
+  experienceGrid.innerHTML = experienceGridHTML;
+  
+  
+  const clientGrid = document.querySelector('.js-client-grid');
+  
+  let clientGridHTML = '';
+  
+  clients.forEach((client) => {
+    clientGridHTML += `
+        <div class="client-cell">
+          <img src="${client.img}" alt="${client.name}">
+        </div>
+      `
+  });
+  
+  clientGrid.innerHTML = clientGridHTML;
+};
 
 
-const clientGrid = document.querySelector('.js-client-grid');
 
-let clientGridHTML = '';
-
-clients.forEach((client) => {
-  clientGridHTML += `
-      <div class="client-cell">
-        <img src="${client.img}" alt="${client.name}">
-      </div>
-    `
-});
-
-clientGrid.innerHTML = clientGridHTML;
-
-
-// const content = document.querySelector('.js-content');
-// content.innerHTML = HTML.homeHTML;
+content.innerHTML = HTML.homeHTML;

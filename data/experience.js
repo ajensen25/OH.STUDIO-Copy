@@ -35,6 +35,42 @@ export const experience = [
     position: 'Senior Designer',
     type: 'Freelance',
   },
+  {
+    name: 'AKQA',
+    duration: '2020',
+    position: 'Senior Designer',
+    type: 'Freelance',
+  },
+  {
+    name: 'UI Centric',
+    duration: '2019',
+    position: 'Senior Product Designer',
+    type: 'Freelance',
+  },
+  {
+    name: 'Agency TK',
+    duration: '2017',
+    position: 'Senior Digital Designer',
+    type: 'Permanent',
+  },
+  {
+    name: 'Agency TK',
+    duration: '2012',
+    position: 'Digital Designer',
+    type: 'Permanent',
+  },
+  {
+    name: 'Next Level',
+    duration: '2009',
+    position: 'Digital Designer',
+    type: 'Permanent',
+  },
+  {
+    name: 'Next Level',
+    duration: '2008',
+    position: 'Junior Digital Designer',
+    type: 'Permanent',
+  },
 ];
 
 export default experience;
