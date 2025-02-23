@@ -1,3 +1,5 @@
+import experience from './data/experience.js';
+
 const HTML = {
   homeHTML: 
   `
@@ -85,9 +87,26 @@ const HTML = {
   `,
   profileHTML:
   `
-
+    
   `
 };
+
+const experienceGrid = document.querySelector('.js-experience-grid');
+
+let experienceGridHTML = '';
+
+experience.forEach((job) => {
+  experienceGridHTML += `
+      <div class="experience-cell">
+        <p>${job.duration}</p>
+        <h2>${job.name}</h2>
+        <p>${job.position}</p>
+        <p class="wrapper-highlight">${job.type}</p>
+      </div>
+    `;
+});
+
+experienceGrid.innerHTML = experienceGridHTML;
 
 
 // const content = document.querySelector('.js-content');
