@@ -56,10 +56,6 @@ export const clients = [
     img: 'assets/clients/correlated.webp',
   },
   {
-    name: 'Here',
-    img: 'assets/clients/here.webp',
-  },
-  {
     name: 'ZeroLight',
     img: 'assets/clients/zerolight.webp',
   },

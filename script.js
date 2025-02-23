@@ -93,11 +93,11 @@ const HTML = {
     </section>
 
     <section class="thumbnail-section">
-      <div class="thumbnail-grid">
-        <a class="grid-item-container">
+      <div class="thumbnail-grid grid-mobile-height">
+        <a class="grid-item-container item-mobile-shorten">
           <img src="assets/profile1.avif" alt="Oli" class="profile-grid-item">
         </a>
-        <a class="grid-item-container">
+        <a class="grid-item-container item-mobile-none">
           <img src="assets/profile2.webp" alt="Oli" class="profile-grid-item">
         </a>
       </div>
@@ -149,7 +149,7 @@ const HTML = {
       </div>
     </section>
 
-    <section class="contact-section">
+    <section class="profile-contact-section">
       <div class="contact-title">
         <h2>Let's work together.</h2>
         <h2><a href="#">Get in touch.</a></h2>
