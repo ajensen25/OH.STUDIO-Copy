@@ -1,4 +1,5 @@
 import experience from './data/experience.js';
+import clients from './data/clients.js';
 
 const HTML = {
   homeHTML: 
@@ -107,6 +108,21 @@ experience.forEach((job) => {
 });
 
 experienceGrid.innerHTML = experienceGridHTML;
+
+
+const clientGrid = document.querySelector('.js-client-grid');
+
+let clientGridHTML = '';
+
+clients.forEach((client) => {
+  clientGridHTML += `
+      <div class="client-cell">
+        <img src="${client.img}" alt="${client.name}">
+      </div>
+    `
+});
+
+clientGrid.innerHTML = clientGridHTML;
 
 
 // const content = document.querySelector('.js-content');

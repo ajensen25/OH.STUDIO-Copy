@@ -351,6 +351,30 @@ footer .footer-right .footer-list {
   line-height: 45px;
 }
 
+/* Client Grid Section Styling */
+.client-grid-section {
+  max-width: var(--site-max-width);
+  margin: 0 auto;
+}
+
+.client-grid-section .client-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  row-gap: 50px;
+  background-color: var(--black-color);
+  border-radius: 20px;
+}
+
+.client-grid .client-cell {
+  padding: 40px;
+}
+
+.client-grid .client-cell img {
+  color: black;
+  background: black;
+  width: 100%;
+}
+
 
 
 /* Media Queries for responsiveness */
