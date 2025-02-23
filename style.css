@@ -328,6 +328,29 @@ footer .footer-right .footer-list {
   margin: 10px 0;
 }
 
+/* Client Section Styling */
+.client-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding-top: 150px;
+  padding-bottom: 50px;
+}
+
+.client-title {
+  text-align: center;
+  font-size: var(--font-size-s);
+  font-weight: 300;
+}
+
+.client-description {
+  font-size: var(--font-size-l);
+  max-width: 700px;
+  text-align: center;
+  line-height: 45px;
+}
+
 
 
 /* Media Queries for responsiveness */
